@@ -1,0 +1,25 @@
+﻿{
+  "IdentityData": {
+    "Roles": [
+      {
+        "Name": "AdminRole"
+      }
+    ],
+    "Users": [
+      {
+        "Username": "admin",
+        "Password": "1q2w3e4R*",
+        "Email": "zhenlei1970@hotmail.com",
+        "Roles": [
+          "AdminRole"
+        ],
+        "Claims": [
+          {
+            "Type": "name",
+            "Value": "admin"
+          }
+        ]
+      }
+    ]
+  }
+}

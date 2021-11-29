@@ -1,0 +1,97 @@
+{
+    "ConnectionStrings": {
+        "ConfigurationDbConnection": "[CONNECTIONSTRING]",
+        "PersistedGrantDbConnection": "[CONNECTIONSTRING]",
+        "IdentityDbConnection": "[CONNECTIONSTRING]",
+        "AdminLogDbConnection": "[CONNECTIONSTRING]",
+        "AdminAuditLogDbConnection": "[CONNECTIONSTRING]",
+        "DataProtectionDbConnection": "[CONNECTIONSTRING]"
+    },
+    "SeedConfiguration": {
+        "ApplySeed": true
+    },
+    "DatabaseMigrationsConfiguration": {
+        "ApplyDatabaseMigrations": true
+    },
+    "DatabaseProviderConfiguration": {
+        "ProviderType": "[DBTYPE]"
+    },
+    "AdminConfiguration": {
+        "PageTitle": "Identity Server",
+        "FaviconUri": "~/favicon.ico",
+        "IdentityAdminRedirectUri": "[ADMINURI]/signin-oidc",
+        "IdentityServerBaseUrl": "[STSURI]",
+        "IdentityAdminCookieName": "IdentityServerAdmin",
+        "IdentityAdminCookieExpiresUtcHours": 12,
+        "RequireHttpsMetadata": false,
+        "TokenValidationClaimName": "name",
+        "TokenValidationClaimRole": "role",
+        "ClientId": "IDS4AdminClient",
+        "ClientSecret": "AdminClientSecret",
+        "OidcResponseType": "code",
+        "Scopes": [
+            "openid",
+            "profile",
+            "email",
+            "roles"
+        ],
+        "AdministrationRole": "AdminRole",
+        "HideUIForMSSqlErrorLogging": false
+    },
+    "SecurityConfiguration": {
+        "CspTrustedDomains": [
+            "fonts.googleapis.com",
+            "fonts.gstatic.com",
+            "www.gravatar.com"
+        ]
+    },
+    "SmtpConfiguration": {
+        "Host": "",
+        "Login": "",
+        "Password": ""
+    },
+    "SendGridConfiguration": {
+        "ApiKey": "",
+        "SourceEmail": "",
+        "SourceName": ""
+    },
+    "AuditLoggingConfiguration": {
+        "Source": "IdentityServer.Admin.Web",
+        "SubjectIdentifierClaim": "sub",
+        "SubjectNameClaim": "name",
+        "IncludeFormVariables": false
+    },
+    "CultureConfiguration": {
+        "Cultures": [],
+        "DefaultCulture": null
+    },
+    "HttpConfiguration": {
+        "BasePath": ""
+    },
+    "IdentityOptions": {
+        "Password": {
+            "RequiredLength": 8
+        },
+        "User": {
+            "RequireUniqueEmail": true
+        },
+        "SignIn": {
+            "RequireConfirmedAccount": false
+        }
+    },
+    "DataProtectionConfiguration": {
+        "ProtectKeysWithAzureKeyVault": false
+    },
+
+    "AzureKeyVaultConfiguration": {
+        "AzureKeyVaultEndpoint": "",
+        "ClientId": "",
+        "ClientSecret": "",
+        "TenantId": "",
+        "UseClientCredentials": true,
+        "DataProtectionKeyIdentifier": "",
+        "ReadConfigurationFromKeyVault": false
+    }
+  [GETADMINBAEPATH]
+  [GETADMINURLS]
+}
