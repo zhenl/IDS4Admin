@@ -11,9 +11,6 @@
 
     <ItemGroup>
       <_WebToolingArtifacts Remove="Properties\PublishProfiles\FolderProfile.pubxml" />
-      <_WebToolingArtifacts Remove="Properties\PublishProfiles\FolderProfile1.pubxml" />
-      <_WebToolingArtifacts Remove="Properties\PublishProfiles\FolderProfile2.pubxml" />
-      <_WebToolingArtifacts Remove="Properties\PublishProfiles\FolderProfile3.pubxml" />
     </ItemGroup>
 
     <ItemGroup>
