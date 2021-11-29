@@ -61,15 +61,15 @@
     "LoginConfiguration": {
         "ResolutionPolicy": "Username"
     },
-    "AdminConfiguration": {
-        "PageTitle": "IdentityServer4",
-        "HomePageLogoUri": "~/images/skoruba-icon.png",
-        "FaviconUri": "~/favicon.ico",
-        "Theme": null,
-        "CustomThemeCss": null,
-        "IdentityAdminBaseUrl": "[ADMINURI]",
-        "AdministrationRole": "AdminRole"
-    },
+  "AdminConfiguration": {
+    "PageTitle": "IdentityServer4",
+    "HomePageLogoUri": "~/images/noimage.GIF",
+    "FaviconUri": "~/favicon.ico",
+    "Theme": null,
+    "CustomThemeCss": null,
+    "IdentityAdminBaseUrl": "[ADMINURI]",
+    "AdministrationRole": "AdminRole"
+  },
     "CspTrustedDomains": [
         "www.gravatar.com",
         "fonts.googleapis.com",
