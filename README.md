@@ -8,4 +8,6 @@
 * 简化了Docker部署，将认证服务和管理应用分别生成镜像，在Docker部署时更简单
 * 增加了一个配置文件生成工具，防止修改配置文件时出错。
 
+使用教程参见[Identity Server 4 从入门到落地（一）—— 从IdentityServer4.Admin开始](https://www.cnblogs.com/zhenl/p/15608722.html)
 
+相关的客户端示例参见[https://github.com/zhenl/IDS4ClientDemo](https://github.com/zhenl/IDS4ClientDemo)
