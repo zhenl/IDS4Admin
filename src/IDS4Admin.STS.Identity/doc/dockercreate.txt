@@ -1,0 +1,7 @@
+﻿docker create --name ids4admin -v /mydata/ids4/admin/log:/app/log \
+ -v /mydata/ids4/admin/appsettings.production.json:/app/appsettings.json \
+ -v /mydata/ids4/admin/identitydata.json:/app/identitydata.json \
+ -v /mydata/ids4/admin/identityserverdata.json:/app/identityserverdata.json -p 6003:80 zhenlei1970/ids4adminadmin
+
+ docker create --name ids4sts -v /mydata/ids4/sts/log:/app/log -v /mydata/ids4/sts/appsettings.production.json:/app/appsettings.json \
+ -p 6010:80 zhenlei1970/ids4adminstsidentity
