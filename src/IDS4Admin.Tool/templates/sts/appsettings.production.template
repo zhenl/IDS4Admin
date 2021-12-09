@@ -82,7 +82,7 @@
     "AdvancedConfiguration": {
         "IssuerUri": ""
     },
-    "BasePath": "",
+    "BasePath": "[STSBASEPATH]",
     "IdentityOptions": {
         "Password": {
             "RequiredLength": 8
@@ -109,6 +109,5 @@
         "DataProtectionKeyIdentifier": "",
         "ReadConfigurationFromKeyVault": false
     }
-    [GETSTSBAEPATH]
     [GETSTSURLS]
 }

@@ -102,7 +102,7 @@
               "[ADMINURI]/signout-callback-oidc"
             ],
             "AllowedCorsOrigins": [
-              "[ADMINURI]"
+              "[ADMINURICORS]"
             ],
             "AllowedScopes": [
               "openid",

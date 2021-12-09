@@ -42,10 +42,14 @@ namespace IDS4Admin.Tool
                 res = res.Replace("[STSURI]", config.STSUri);
                 res = res.Replace("[DBTYPE]", config.DbType);
                 res = res.Replace("[CONNECTIONSTRING]", config.DbConnString);
-                res = res.Replace("[GETSTSURLS]", GetUrls(config.STSUri));
-                res = res.Replace("[GETADMINURLS]", GetUrls(config.AdminUri));
-                res = res.Replace("[GETSTSBAEPATH]", GetBasePath(config.STSUri));
-                res = res.Replace("[GETADMINBAEPATH]", GetBasePath(config.AdminUri));
+                res = res.Replace("[GETSTSURLS]", GetUrls(config.STSUri,config.IsDocker));
+                res = res.Replace("[GETADMINURLS]", GetUrls(config.AdminUri, config.IsDocker));
+                res = res.Replace("[STSBASEPATH]", GetBasePath(config.STSUri));
+                res = res.Replace("[ADMINBASEPATH]", GetBasePath(config.AdminUri));
+                res = res.Replace("[ADMINURICORS]", GetCorsPath(config.AdminUri));
+                
+                //res = res.Replace("[GETSTSBAEPATH]", GetBasePathCong(config.STSUri));
+                //res = res.Replace("[GETADMINBAEPATH]", GetBasePath(config.AdminUri));
             }
             return res;
         }
@@ -55,15 +59,36 @@ namespace IDS4Admin.Tool
             var res = "";
             if (!string.IsNullOrEmpty(sTSUri))
             {
+                var arr = sTSUri.Split("/".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                if (arr.Length > 2) res = @"/" + arr[2];
+            }
+            return res;
+        }
+        private static string GetBasePathCong(string sTSUri)
+        {
+            var res = "";
+            if (!string.IsNullOrEmpty(sTSUri))
+            {
                 var arr= sTSUri.Split("/".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
                 if(arr.Length > 2) res= @", ""BasePath"":""/" + arr[2] +@"""";
             }
             return res;
         }
-
-        private static string GetUrls(string sTSUri)
+        private static string GetCorsPath(string sTSUri)
         {
             var res = "";
+            if (!string.IsNullOrEmpty(sTSUri))
+            {
+                var arr = sTSUri.Split("/".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                res = arr[0]+"//"+arr[1];
+            }
+            return res;
+        }
+
+        private static string GetUrls(string sTSUri,string isdocker)
+        {
+            var res = "";
+            if (isdocker == "y" || isdocker == "Y") return res;
             if (!string.IsNullOrEmpty(sTSUri))
             {
                 var arr = sTSUri.Split("/".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);

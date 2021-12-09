@@ -17,6 +17,7 @@ namespace IDS4Admin.Tool
 
         public string DbConnString { get; set; } = "Server=(localdb)\\mssqllocaldb;Database=IdentityServer4Admin;Trusted_Connection=True;MultipleActiveResultSets=true";
 
+        public string IsDocker { get; set; } = "N";
         public void SaveToFile(string path)
         {
             var filename = Path.Combine(path, "IDS4config.xml");

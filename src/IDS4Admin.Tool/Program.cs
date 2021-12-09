@@ -23,7 +23,8 @@ string DisplayCommand()
     Console.WriteLine("2:确定管理App(AdminApp)运行的Uri:" + config.AdminUri);
     Console.WriteLine("3:数据库类型:" + config.DbType);
     Console.WriteLine("4:数据库连接字符串:" + config.DbConnString);
-    Console.WriteLine("5:生成配置文件...");
+    Console.WriteLine("5:从Docker镜像部署:" + config.IsDocker);
+    Console.WriteLine("6:生成配置文件...");
     Console.WriteLine("exit:退出");
         return "";
 }
@@ -50,6 +51,10 @@ void TreateCommand(string? command)
             config.SaveToFile("");
             break;
         case "5":
+            config.IsDocker = GetNewValue("Docker"); 
+            config.SaveToFile("");
+            break;
+        case "6":
             Console.WriteLine(Utility.CreateConfigureFiles(config));
             break;
         case "exit":
